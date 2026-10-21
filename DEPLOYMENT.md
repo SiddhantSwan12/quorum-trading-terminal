@@ -6,7 +6,7 @@ Production: https://quorum-terminal.vercel.app
 
 The Vercel project is `quorum-terminal` in `siddhant-swans-projects`. Its source root is `terminal/`. Redeploy from that directory with `npx vercel@65.0.0 deploy --prod --scope siddhant-swans-projects`.
 
-The frontend is deployed. The persistent backend is prepared but has not yet been provisioned or connected. Until connected, the website uses its existing simulated feed and backend-dependent features are unavailable.
+The frontend is deployed. The free backend is prepared but has not yet been provisioned or connected. Until connected, the website uses its existing simulated feed and backend-dependent features are unavailable.
 
 After the backend is healthy, add `VITE_API_BASE=https://BACKEND-HOST/api` to the Vercel project's Production environment and redeploy. This is a public URL compiled into browser JavaScript; never put credentials or LLM keys in `VITE_` settings. The frontend uses hash routes, so no SPA rewrite is needed.
 
@@ -16,7 +16,7 @@ After the backend is healthy, add `VITE_API_BASE=https://BACKEND-HOST/api` to th
 
 The free backend sleeps when idle and can take time to wake. Its filesystem is ephemeral: uploaded reports, alerts, saved agent runs and SQLite caches can be lost on redeploy or restart. Alert monitoring pauses while the service sleeps. This is a working free API deployment, not a durable or continuously running alert service. A separate free external database/object store would require additional account connections and application changes for durability.
 
-Render needs access to a source repository containing this project, including the vendored `TradingAgents/` source. The current workspace root is not a Git repository; its nested `TradingAgents/.git` belongs to upstream. Do not publish it as an empty Git submodule or push this application to the upstream repository. Use a separate private application repository with the actual source files.
+The deployment source is in the private repository https://github.com/SiddhantSwan12/quorum-trading-terminal, including the actual vendored `TradingAgents/` source. No local keys, reports or databases were copied there. The current workspace root is not a Git repository; its nested `TradingAgents/.git` belongs to upstream. Do not push application changes to that upstream repository. The deployment repository was created from a separate sanitized source directory; future backend edits need to be synced there before deploying.
 
 Configure these variables on the backend:
 
