@@ -1,0 +1,15 @@
+**/node_modules/
+**/dist/
+**/.vercel/
+**/.env
+**/.env.*
+!**/.env.example
+**/__pycache__/
+**/*.pyc
+**/*.egg-info/
+server/data/
+.taste-skill/
+.claude/
+.gstack/
+**/*.log
+**/.venv/

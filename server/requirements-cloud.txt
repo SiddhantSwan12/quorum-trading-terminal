@@ -1,0 +1,8 @@
+# The persistent web backend. Kronos/PyTorch are optional and excluded from this image.
+fastapi>=0.110
+uvicorn[standard]>=0.29
+yfinance>=0.2.40
+python-dotenv>=1.0
+pypdf>=5.0
+curl_cffi>=0.7
+tzdata>=2024.1

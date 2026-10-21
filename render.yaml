@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: quorum-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /api/health
+    numInstances: 1
+    envVars:
+      - key: QUORUM_DATA_DIR
+        value: /tmp/quorum
+      - key: QUORUM_ALLOWED_ORIGINS
+        sync: false
+      - key: SEC_USER_AGENT
+        sync: false

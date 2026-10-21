@@ -1,0 +1,13 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+yfinance>=0.2.40
+python-dotenv>=1.0
+pypdf>=5.0
+
+# Kronos projections (optional). A CUDA build of torch uses the GPU; the CPU build works, slower.
+# The model code is vendored in server/kronos; the weights download from Hugging Face on first use.
+torch>=2.0
+einops>=0.8
+safetensors>=0.4
+huggingface_hub>=0.33
+tqdm>=4.60
